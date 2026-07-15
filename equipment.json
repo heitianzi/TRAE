@@ -1,0 +1,364 @@
+{
+  "equipment": [
+    {
+      "id": "wooden_stick",
+      "name": "木棒",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 2,
+      "defense": 0,
+      "quality": "white"
+    },
+    {
+      "id": "iron_sword",
+      "name": "长剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 5,
+      "defense": 0,
+      "quality": "green"
+    },
+    {
+      "id": "steel_sword",
+      "name": "青钢剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 8,
+      "defense": 0,
+      "quality": "blue"
+    },
+    {
+      "id": "zhenwu_sword",
+      "name": "真武剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 12,
+      "defense": 0,
+      "quality": "purple"
+    },
+    {
+      "id": "dragon_sword",
+      "name": "屠龙刀",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 20,
+      "defense": 0,
+      "quality": "orange"
+    },
+    {
+      "id": "yitian_sword",
+      "name": "倚天剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 18,
+      "defense": 5,
+      "quality": "orange"
+    },
+    {
+      "id": "holy_fire_token",
+      "name": "圣火令",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 15,
+      "defense": 3,
+      "quality": "purple"
+    },
+    {
+      "id": "xuan_tie_sword",
+      "name": "玄铁剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 16,
+      "defense": 2,
+      "quality": "orange"
+    },
+    {
+      "id": "junzi_sword",
+      "name": "君子剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 10,
+      "defense": 1,
+      "quality": "purple"
+    },
+    {
+      "id": "shunu_sword",
+      "name": "淑女剑",
+      "type": "weapon",
+      "slot": "武器",
+      "category": "attack",
+      "attack": 9,
+      "defense": 2,
+      "quality": "purple"
+    },
+    {
+      "id": "leather_armor",
+      "name": "皮甲",
+      "type": "wrist_guard",
+      "slot": "护腕",
+      "category": "defense",
+      "attack": 0,
+      "defense": 2,
+      "quality": "white"
+    },
+    {
+      "id": "iron_shield",
+      "name": "铁护腕",
+      "type": "wrist_guard",
+      "slot": "护腕",
+      "category": "defense",
+      "attack": 0,
+      "defense": 4,
+      "quality": "green"
+    },
+    {
+      "id": "steel_bracelet",
+      "name": "金丝护腕",
+      "type": "wrist_guard",
+      "slot": "护腕",
+      "category": "defense",
+      "attack": 1,
+      "defense": 6,
+      "quality": "blue"
+    },
+    {
+      "id": "silver_necklace",
+      "name": "银链",
+      "type": "necklace",
+      "slot": "项链",
+      "category": "attack",
+      "attack": 1,
+      "defense": 1,
+      "quality": "green"
+    },
+    {
+      "id": "gold_necklace",
+      "name": "金项圈",
+      "type": "necklace",
+      "slot": "项链",
+      "category": "attack",
+      "attack": 2,
+      "defense": 2,
+      "quality": "blue"
+    },
+    {
+      "id": "magic_amulet",
+      "name": "豹胎护符",
+      "type": "amulet",
+      "slot": "护符",
+      "category": "attack",
+      "attack": 3,
+      "defense": 1,
+      "quality": "purple"
+    },
+    {
+      "id": "iron_ring",
+      "name": "铁指环",
+      "type": "ring",
+      "slot": "戒指",
+      "category": "attack",
+      "attack": 1,
+      "defense": 0,
+      "quality": "white"
+    },
+    {
+      "id": "silver_ring",
+      "name": "银指环",
+      "type": "ring",
+      "slot": "戒指",
+      "category": "attack",
+      "attack": 2,
+      "defense": 1,
+      "quality": "green"
+    },
+    {
+      "id": "gold_ring",
+      "name": "金指环",
+      "type": "ring",
+      "slot": "戒指",
+      "category": "attack",
+      "attack": 3,
+      "defense": 2,
+      "quality": "blue"
+    },
+    {
+      "id": "jade_ring",
+      "name": "玉指环",
+      "type": "ring",
+      "slot": "戒指",
+      "category": "attack",
+      "attack": 4,
+      "defense": 3,
+      "quality": "purple"
+    },
+    {
+      "id": "cloth_hat",
+      "name": "布帽",
+      "type": "helmet",
+      "slot": "帽子",
+      "category": "defense",
+      "attack": 0,
+      "defense": 2,
+      "quality": "white"
+    },
+    {
+      "id": "iron_helmet",
+      "name": "铁盔",
+      "type": "helmet",
+      "slot": "帽子",
+      "category": "defense",
+      "attack": 0,
+      "defense": 4,
+      "quality": "green"
+    },
+    {
+      "id": "steel_helmet",
+      "name": "钢盔",
+      "type": "helmet",
+      "slot": "帽子",
+      "category": "defense",
+      "attack": 0,
+      "defense": 6,
+      "quality": "blue"
+    },
+    {
+      "id": "jade_helmet",
+      "name": "玉冠",
+      "type": "helmet",
+      "slot": "帽子",
+      "category": "defense",
+      "attack": 1,
+      "defense": 8,
+      "quality": "purple"
+    },
+    {
+      "id": "leather_gloves",
+      "name": "皮手套",
+      "type": "gauntlet",
+      "slot": "护手",
+      "category": "defense",
+      "attack": 1,
+      "defense": 2,
+      "quality": "green"
+    },
+    {
+      "id": "steel_gloves",
+      "name": "铁手套",
+      "type": "gauntlet",
+      "slot": "护手",
+      "category": "defense",
+      "attack": 2,
+      "defense": 3,
+      "quality": "blue"
+    },
+    {
+      "id": "iron_shoulder",
+      "name": "铁护肩",
+      "type": "shoulder",
+      "slot": "护肩",
+      "category": "defense",
+      "attack": 0,
+      "defense": 3,
+      "quality": "green"
+    },
+    {
+      "id": "steel_shoulder",
+      "name": "钢护肩",
+      "type": "shoulder",
+      "slot": "护肩",
+      "category": "defense",
+      "attack": 0,
+      "defense": 5,
+      "quality": "blue"
+    },
+    {
+      "id": "leather_belt",
+      "name": "布腰带",
+      "type": "belt",
+      "slot": "腰带",
+      "category": "defense",
+      "attack": 0,
+      "defense": 1,
+      "quality": "white"
+    },
+    {
+      "id": "iron_belt",
+      "name": "铁腰带",
+      "type": "belt",
+      "slot": "腰带",
+      "category": "defense",
+      "attack": 0,
+      "defense": 2,
+      "quality": "green"
+    },
+    {
+      "id": "steel_belt",
+      "name": "钢腰带",
+      "type": "belt",
+      "slot": "腰带",
+      "category": "defense",
+      "attack": 0,
+      "defense": 3,
+      "quality": "blue"
+    },
+    {
+      "id": "leather_boots",
+      "name": "布鞋",
+      "type": "boots",
+      "slot": "靴子",
+      "category": "defense",
+      "attack": 0,
+      "defense": 1,
+      "quality": "white"
+    },
+    {
+      "id": "iron_boots",
+      "name": "铁靴",
+      "type": "boots",
+      "slot": "靴子",
+      "category": "defense",
+      "attack": 0,
+      "defense": 2,
+      "quality": "green"
+    },
+    {
+      "id": "steel_boots",
+      "name": "钢靴",
+      "type": "boots",
+      "slot": "靴子",
+      "category": "defense",
+      "attack": 0,
+      "defense": 3,
+      "quality": "blue"
+    },
+    {
+      "id": "silk_robe",
+      "name": "乌蚕衣",
+      "type": "wrist_guard",
+      "slot": "护腕",
+      "category": "defense",
+      "attack": 0,
+      "defense": 8,
+      "quality": "purple"
+    },
+    {
+      "id": "golden_armor",
+      "name": "金丝宝甲",
+      "type": "gauntlet",
+      "slot": "护手",
+      "category": "defense",
+      "attack": 2,
+      "defense": 6,
+      "quality": "purple"
+    }
+  ]
+}

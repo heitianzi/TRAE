@@ -1,0 +1,39 @@
+{
+  "monsters": [
+    {
+      "id": 1,
+      "name": "狼",
+      "attack": 5,
+      "defense": 2,
+      "hp": 20,
+      "sprite": "wolf",
+      "exp_reward": 50,
+      "min_level": 1
+    },
+    {
+      "id": 2,
+      "name": "老虎",
+      "attack": 15,
+      "defense": 8,
+      "hp": 50,
+      "sprite": "tiger",
+      "exp_reward": 150,
+      "min_level": 5
+    },
+    {
+      "id": 3,
+      "name": "狮子",
+      "attack": 30,
+      "defense": 15,
+      "hp": 100,
+      "sprite": "lion",
+      "exp_reward": 300,
+      "min_level": 10
+    }
+  ],
+  "tile_mapping": {
+    "wolf": 100,
+    "tiger": 101,
+    "lion": 102
+  }
+}
