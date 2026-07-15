@@ -7,3 +7,5 @@ savegame.json
 .vscode/
 *.log
 *.tmp
+*.zip
+*.html.zip

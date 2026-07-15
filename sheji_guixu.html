@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社稷归墟传 - 大明王朝RPG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #1a0f0a 0%, #3d2817 50%, #1a0f0a 100%);
+            color: #e8d5b0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 标题区 */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(ellipse at center, rgba(139, 69, 19, 0.3) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61 38 L95 38 L67 58 L78 92 L50 72 L22 92 L33 58 L5 38 L39 38 Z' fill='%23d4a574' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 200px;
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: #d4a574;
+            text-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #8b6914;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .description {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #c9a961;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 章节标题 */
+        .section-title {
+            font-size: 2.2em;
+            color: #d4a574;
+            text-align: center;
+            margin: 60px 0 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #8b6914;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: "❖";
+            position: absolute;
+            left: 50%;
+            top: -15px;
+            transform: translateX(-50%);
+            background: #1a0f0a;
+            padding: 0 20px;
+            color: #d4a574;
+        }
+
+        /* 特性卡片 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #2a1810 0%, #1a0f0a 100%);
+            border: 2px solid #8b6914;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            border-color: #d4a574;
+        }
+
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4a574, #8b6914, #d4a574);
+        }
+
+        .feature-card h3 {
+            color: #d4a574;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-card .icon {
+            font-size: 1.5em;
+        }
+
+        .feature-card p {
+            color: #c9a961;
+            font-size: 1em;
+        }
+
+        /* 地图区域 */
+        .map-section {
+            background: linear-gradient(145deg, #2a1810 0%, #1a0f0a 100%);
+            border: 2px solid #8b6914;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #2d4a2b 0%, #3d5a3b 50%, #2d4a2b 100%);
+            border: 3px solid #8b6914;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .map-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 49.5%, #c9a961 49.5%, #c9a961 50.5%, transparent 50.5%),
+                linear-gradient(0deg, transparent 49.5%, #c9a961 49.5%, #c9a961 50.5%, transparent 50.5%);
+        }
+
+        .map-location {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 0.7em;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .map-location .dot {
+            width: 10px;
+            height: 10px;
+            background: #d4a574;
+            border-radius: 50%;
+            margin: 0 auto 3px;
+            box-shadow: 0 0 8px rgba(212, 165, 116, 0.8);
+        }
+
+        .map-location.start .dot {
+            background: #ff4444;
+            box-shadow: 0 0 12px rgba(255, 68, 68, 0.8);
+        }
+
+        /* 地点网格 */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .location-item {
+            background: rgba(42, 24, 16, 0.8);
+            border: 1px solid #8b6914;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .location-item:hover {
+            background: rgba(212, 165, 116, 0.2);
+            transform: scale(1.05);
+        }
+
+        .location-item .name {
+            color: #d4a574;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .location-item .level {
+            color: #8b6914;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        /* 路线图 */
+        .routes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .route-card {
+            background: linear-gradient(145deg, #2a1810 0%, #1a0f0a 100%);
+            border-left: 4px solid #d4a574;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .route-card:hover {
+            border-left-color: #ff4444;
+            transform: translateX(5px);
+        }
+
+        .route-card .path {
+            color: #d4a574;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .route-card .arrow {
+            color: #8b6914;
+            margin: 0 5px;
+        }
+
+        /* 战斗系统 */
+        .combat-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .monster-card {
+            background: linear-gradient(145deg, #2a1810 0%, #1a0f0a 100%);
+            border: 2px solid #8b6914;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .monster-card h4 {
+            color: #ff6b6b;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .monster-card .stat {
+            color: #c9a961;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .monster-card .reward {
+            color: #d4a574;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* 故事卡片 */
+        .story-card {
+            background: linear-gradient(145deg, #2a1810 0%, #1a0f0a 100%);
+            border: 1px solid #8b6914;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 15px 0;
+            transition: all 0.3s;
+        }
+
+        .story-card:hover {
+            border-color: #d4a574;
+            box-shadow: 0 5px 20px rgba(212, 165, 116, 0.2);
+        }
+
+        .story-card .year {
+            color: #d4a574;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .story-card .name {
+            color: #ff6b6b;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .story-card .text {
+            color: #c9a961;
+            line-height: 1.8;
+        }
+
+        /* 装备 */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .equip-item {
+            background: rgba(42, 24, 16, 0.6);
+            border: 1px solid #8b6914;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .equip-item.white { border-color: #cccccc; }
+        .equip-item.green { border-color: #4caf50; }
+        .equip-item.blue { border-color: #2196f3; }
+        .equip-item.purple { border-color: #9c27b0; }
+        .equip-item.orange { border-color: #ff9800; }
+
+        .equip-item .name {
+            color: inherit;
+            font-weight: bold;
+        }
+
+        .equip-item .stats {
+            color: #c9a961;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        /* 操作说明 */
+        .controls {
+            background: linear-gradient(145deg, #2a1810 0%, #1a0f0a 100%);
+            border: 2px solid #8b6914;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .control-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(212, 165, 116, 0.1);
+            border-radius: 5px;
+        }
+
+        .key {
+            background: #1a0f0a;
+            border: 1px solid #d4a574;
+            color: #d4a574;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-weight: bold;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .action {
+            color: #c9a961;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b6914;
+            border-top: 1px solid #8b6914;
+            margin-top: 60px;
+        }
+
+        .footer .quote {
+            font-style: italic;
+            color: #d4a574;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        /* 动画 */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 165, 116, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(212, 165, 116, 0.6); }
+        }
+
+        .glow {
+            animation: glow 2s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero .subtitle { font-size: 1.2em; }
+            .section-title { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>社稷归墟传</h1>
+        <div class="subtitle">大明王朝 RPG · 朱元璋的崛起之路</div>
+        <p class="description">
+            以明朝开国历史为背景的2D像素风角色扮演游戏<br>
+            从乞丐到帝王，在乱世中书写你的传奇<br>
+            <span style="color:#d4a574;">现已支持网页浏览器在线游玩（WebAssembly）</span>
+        </p>
+    </div>
+
+    <div class="container">
+        <!-- 项目介绍 -->
+        <h2 class="section-title">创意介绍</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3><span class="icon">🎮</span>游戏类型</h3>
+                <p>2D像素风历史RPG游戏，基于Python+Pygame开发，通过pygbag编译为WebAssembly，支持浏览器直接游玩</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📜</span>历史背景</h3>
+                <p>以朱元璋从乞丐到帝王的真实历史为蓝本，包含1344年至1382年的完整历史叙事</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🗺️</span>开放世界</h3>
+                <p>120×120超大地图，22个历史地点，十字路网结构实现全境自由探索，配备实时小地图</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">⚔️</span>战斗系统</h3>
+                <p>回合制战斗，3种怪物，金币奖励机制，等级成长体系</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">💰</span>交易系统</h3>
+                <p>5类商店（杂货/武器/防具/珍品/药铺），36件商品，支持买入卖出，金币经济体系</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">👤</span>NPC对话</h3>
+                <p>10位历史NPC角色，打字机式对话效果，每位NPC提供5段独特对白</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">👘</span>皮肤系统</h3>
+                <p>角色三阶段成长外观：农民(1-4级) → 士兵(5-9级) → 帝王红袍(10级+)，自动切换</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">💾</span>存档系统</h3>
+                <p>完整保存玩家位置、等级、装备、金币、进度，随时继续游戏，支持进度追踪面板</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🌐</span>网页游玩</h3>
+                <p>通过pygbag编译为WebAssembly，无需安装，打开浏览器即可游玩，跨平台兼容</p>
+            </div>
+        </div>
+
+        <!-- 地图系统 -->
+        <h2 class="section-title">十字路网地图</h2>
+        <div class="map-section">
+            <p style="text-align: center; color: #c9a961; margin-bottom: 20px;">
+                以钟离县（地图中心）为枢纽，向东南西北四个方向延伸主干道，连接22个历史名城
+            </p>
+            <div class="map-container">
+                <!-- 主要地点标记 -->
+                <div class="map-location start" style="left: 50%; top: 50%;">
+                    <div class="dot"></div>钟离县
+                </div>
+                <div class="map-location" style="left: 37.5%; top: 41.7%;">
+                    <div class="dot"></div>皇觉寺
+                </div>
+                <div class="map-location" style="left: 66.7%; top: 50%;">
+                    <div class="dot"></div>淮西
+                </div>
+                <div class="map-location" style="left: 83.3%; top: 45.8%;">
+                    <div class="dot"></div>河南
+                </div>
+                <div class="map-location" style="left: 45.8%; top: 66.7%;">
+                    <div class="dot"></div>定远
+                </div>
+                <div class="map-location" style="left: 70.8%; top: 70.8%;">
+                    <div class="dot"></div>和州
+                </div>
+                <div class="map-location" style="left: 81.7%; top: 81.7%;">
+                    <div class="dot"></div>太平府
+                </div>
+                <div class="map-location" style="left: 87.5%; top: 91.7%;">
+                    <div class="dot"></div>应天府
+                </div>
+                <div class="map-location" style="left: 95.8%; top: 70.8%;">
+                    <div class="dot"></div>徽州
+                </div>
+                <div class="map-location" style="left: 93.3%; top: 43.3%;">
+                    <div class="dot"></div>浙东
+                </div>
+                <div class="map-location" style="left: 91.7%; top: 31.7%;">
+                    <div class="dot"></div>金华
+                </div>
+                <div class="map-location" style="left: 58.3%; top: 91.7%;">
+                    <div class="dot"></div>鄱阳湖
+                </div>
+                <div class="map-location" style="left: 95.8%; top: 60%;">
+                    <div class="dot"></div>苏州
+                </div>
+                <div class="map-location" style="left: 8.3%; top: 45.8%;">
+                    <div class="dot"></div>元大都
+                </div>
+                <div class="map-location" style="left: 16.7%; top: 79.2%;">
+                    <div class="dot"></div>四川
+                </div>
+                <div class="map-location" style="left: 37.5%; top: 95.8%;">
+                    <div class="dot"></div>云南
+                </div>
+                <div class="map-location" style="left: 50%; top: 8.3%;">
+                    <div class="dot"></div>北京
+                </div>
+                <div class="map-location" style="left: 12.5%; top: 31.7%;">
+                    <div class="dot"></div>长安
+                </div>
+                <div class="map-location" style="left: 29.2%; top: 45.8%;">
+                    <div class="dot"></div>襄阳
+                </div>
+                <div class="map-location" style="left: 70.8%; top: 85%;">
+                    <div class="dot"></div>南昌
+                </div>
+                <div class="map-location" style="left: 79.2%; top: 95.8%;">
+                    <div class="dot"></div>广州
+                </div>
+                <div class="map-location" style="left: 98.3%; top: 35%;">
+                    <div class="dot"></div>杭州
+                </div>
+            </div>
+        </div>
+
+        <!-- 地点列表 -->
+        <h2 class="section-title">历史地点</h2>
+        <div class="locations-grid">
+            <div class="location-item"><div class="name">钟离县</div><div class="level">起始 · 等级 1</div></div>
+            <div class="location-item"><div class="name">皇觉寺</div><div class="level">等级 2</div></div>
+            <div class="location-item"><div class="name">淮西</div><div class="level">等级 3</div></div>
+            <div class="location-item"><div class="name">河南</div><div class="level">等级 4</div></div>
+            <div class="location-item"><div class="name">定远</div><div class="level">等级 5</div></div>
+            <div class="location-item"><div class="name">和州</div><div class="level">等级 6</div></div>
+            <div class="location-item"><div class="name">太平府</div><div class="level">等级 7</div></div>
+            <div class="location-item"><div class="name">应天府</div><div class="level">等级 8</div></div>
+            <div class="location-item"><div class="name">徽州</div><div class="level">等级 9</div></div>
+            <div class="location-item"><div class="name">浙东</div><div class="level">等级 10</div></div>
+            <div class="location-item"><div class="name">金华</div><div class="level">等级 11</div></div>
+            <div class="location-item"><div class="name">鄱阳湖</div><div class="level">等级 12</div></div>
+            <div class="location-item"><div class="name">苏州</div><div class="level">等级 13</div></div>
+            <div class="location-item"><div class="name">元大都</div><div class="level">等级 14</div></div>
+            <div class="location-item"><div class="name">四川</div><div class="level">等级 15</div></div>
+            <div class="location-item"><div class="name">云南</div><div class="level">等级 16</div></div>
+            <div class="location-item"><div class="name">北京</div><div class="level">等级 17</div></div>
+            <div class="location-item"><div class="name">长安</div><div class="level">等级 18</div></div>
+            <div class="location-item"><div class="name">襄阳</div><div class="level">等级 4</div></div>
+            <div class="location-item"><div class="name">南昌</div><div class="level">等级 7</div></div>
+            <div class="location-item"><div class="name">广州</div><div class="level">等级 19</div></div>
+            <div class="location-item"><div class="name">杭州</div><div class="level">等级 12</div></div>
+        </div>
+
+        <!-- 主要路线 -->
+        <h2 class="section-title">历史路线</h2>
+        <div class="routes">
+            <div class="route-card">
+                <div class="path">钟离县 <span class="arrow">→</span> 北京</div>
+                <p style="color: #c9a961;">向北直达，朱元璋北伐的最终目标</p>
+            </div>
+            <div class="route-card">
+                <div class="path">钟离县 <span class="arrow">→</span> 应天府</div>
+                <p style="color: #c9a961;">向东南：钟离县 → 和州 → 太平府 → 应天府</p>
+            </div>
+            <div class="route-card">
+                <div class="path">钟离县 <span class="arrow">→</span> 元大都</div>
+                <p style="color: #c9a961;">向西：钟离县 → 襄阳 → 元大都</p>
+            </div>
+            <div class="route-card">
+                <div class="path">钟离县 <span class="arrow">→</span> 云南</div>
+                <p style="color: #c9a961;">向南：钟离县 → 定远 → 向西 → 云南</p>
+            </div>
+            <div class="route-card">
+                <div class="path">钟离县 <span class="arrow">→</span> 广州</div>
+                <p style="color: #c9a961;">向东南：钟离县 → 应天府 → 向南 → 广州</p>
+            </div>
+            <div class="route-card">
+                <div class="path">钟离县 <span class="arrow">→</span> 杭州</div>
+                <p style="color: #c9a961;">向东：钟离县 → 浙东 → 杭州</p>
+            </div>
+        </div>
+
+        <!-- 战斗系统 -->
+        <h2 class="section-title">战斗系统</h2>
+        <div class="combat-stats">
+            <div class="monster-card">
+                <h4>🐺 狼</h4>
+                <div class="stat">攻击: 5 | 防御: 2 | 生命: 20</div>
+                <div class="stat">最低等级: 1</div>
+                <div class="reward">经验奖励: 50</div>
+            </div>
+            <div class="monster-card">
+                <h4>🐯 老虎</h4>
+                <div class="stat">攻击: 15 | 防御: 8 | 生命: 50</div>
+                <div class="stat">最低等级: 5</div>
+                <div class="reward">经验奖励: 150</div>
+            </div>
+            <div class="monster-card">
+                <h4>🦁 狮子</h4>
+                <div class="stat">攻击: 30 | 防御: 15 | 生命: 100</div>
+                <div class="stat">最低等级: 10</div>
+                <div class="reward">经验奖励: 300</div>
+            </div>
+        </div>
+
+        <!-- 装备系统 -->
+        <h2 class="section-title">装备系统</h2>
+        <p style="text-align: center; color: #c9a961; margin-bottom: 20px;">
+            5个品质等级 · 10+件装备 · 涵盖武器、防具、饰品
+        </p>
+        <div class="equipment-grid">
+            <div class="equip-item white"><div class="name">木棒</div><div class="stats">攻击+2</div></div>
+            <div class="equip-item green"><div class="name">长剑</div><div class="stats">攻击+5</div></div>
+            <div class="equip-item blue"><div class="name">青钢剑</div><div class="stats">攻击+8</div></div>
+            <div class="equip-item purple"><div class="name">真武剑</div><div class="stats">攻击+12</div></div>
+            <div class="equip-item orange"><div class="name">屠龙刀</div><div class="stats">攻击+20</div></div>
+            <div class="equip-item orange"><div class="name">倚天剑</div><div class="stats">攻击+18 防御+5</div></div>
+            <div class="equip-item green"><div class="name">皮甲</div><div class="stats">防御+2</div></div>
+            <div class="equip-item blue"><div class="name">金丝护腕</div><div class="stats">攻击+1 防御+6</div></div>
+            <div class="equip-item purple"><div class="name">玉冠</div><div class="stats">攻击+1 防御+8</div></div>
+            <div class="equip-item blue"><div class="name">金项圈</div><div class="stats">攻击+2 防御+2</div></div>
+            <div class="equip-item purple"><div class="name">玉指环</div><div class="stats">攻击+4 防御+3</div></div>
+            <div class="equip-item orange"><div class="name">金丝宝甲</div><div class="stats">攻击+2 防御+6</div></div>
+        </div>
+
+        <!-- 历史剧情 -->
+        <h2 class="section-title">历史剧情</h2>
+        <div class="story-card">
+            <div class="year">1344年 · 元末乱世</div>
+            <div class="name">钟离县</div>
+            <div class="text">家乡遭遇大旱，庄稼颗粒无收，父亲和兄长相继饿死。为了活命，朱元璋被迫离开家乡，四处乞讨。此时的他，手中只有一个破碗，心中却怀揣着改变命运的决心。</div>
+        </div>
+        <div class="story-card">
+            <div class="year">1351年 · 投军起义</div>
+            <div class="name">淮西 · 皇觉寺</div>
+            <div class="text">走投无路的朱元璋先在皇觉寺出家，后加入郭子兴的红巾军。凭借着过人的胆识和谋略，他很快在军中崭露头角，被郭子兴收为义子，并娶了马氏为妻。</div>
+        </div>
+        <div class="story-card">
+            <div class="year">1356年 · 建都应天</div>
+            <div class="name">应天府</div>
+            <div class="text">朱元璋攻占应天府（今南京），将其作为自己的都城。他广招贤才，发展经济，积蓄力量。应天府成为了朱元璋争夺天下的重要基地。</div>
+        </div>
+        <div class="story-card">
+            <div class="year">1363年 · 鄱阳湖决战</div>
+            <div class="name">鄱阳湖</div>
+            <div class="text">鄱阳湖之战爆发，朱元璋与陈友谅展开决战。经过三十六天的激战，朱元璋以少胜多，击败了陈友谅。这场战役奠定了朱元璋统一江南的基础。</div>
+        </div>
+        <div class="story-card">
+            <div class="year">1368年 · 推翻元朝</div>
+            <div class="name">元大都 · 北京</div>
+            <div class="text">1368年，朱元璋在应天府称帝，建立大明王朝，年号洪武。他派徐达、常遇春率领大军北伐，攻占元大都，推翻了元朝的统治。元顺帝仓皇北逃，元朝灭亡。</div>
+        </div>
+        <div class="story-card">
+            <div class="year">1382年 · 统一全国</div>
+            <div class="name">云南</div>
+            <div class="text">朱元璋派沐英率军攻打云南，消灭了梁王的势力。云南归入大明版图，朱元璋完成了对全国的统一。从乞讨少年到大明皇帝，朱元璋用三十八年的时间，书写了一段传奇。</div>
+        </div>
+
+        <!-- 操作说明 -->
+        <h2 class="section-title">游戏操作</h2>
+        <div class="controls">
+            <div class="control-grid">
+                <div class="control-item">
+                    <span class="key">↑ ↓ ← →</span>
+                    <span class="action">移动角色</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">M</span>
+                    <span class="action">打开/关闭世界地图</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">S</span>
+                    <span class="action">保存游戏进度</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">L</span>
+                    <span class="action">加载游戏进度</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">E</span>
+                    <span class="action">展开/收起装备栏</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">F</span>
+                    <span class="action">吃饭恢复体力</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">T</span>
+                    <span class="action">与NPC对话</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">B</span>
+                    <span class="action">打开商店(买)</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">N</span>
+                    <span class="action">商店出售标签</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">G</span>
+                    <span class="action">装备图鉴</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">Enter</span>
+                    <span class="action">确认交易 / 开始游戏</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">Space</span>
+                    <span class="action">推进对话</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">Tab</span>
+                    <span class="action">探索进度面板</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">P</span>
+                    <span class="action">种菜获取食物</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">ESC</span>
+                    <span class="action">关闭/退出</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 技术栈 -->
+        <h2 class="section-title">技术架构</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3><span class="icon">🐍</span>Python + Pygame</h3>
+                <p>基于Python 3.x和Pygame 2.x开发，asyncio异步架构，原生兼容WebAssembly</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🌐</span>pygbag + WASM</h3>
+                <p>通过pygbag编译为WebAssembly，无需安装客户端，浏览器即开即玩，跨平台运行</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">📁</span>数据驱动</h3>
+                <p>地图、装备、怪物、剧情、NPC、商店均使用JSON配置，方便扩展和维护</p>
+            </div>
+            <div class="feature-card">
+                <h3><span class="icon">🎨</span>像素美术</h3>
+                <p>36张瓦片图 + Python代码生成的角色/NPC精灵图，SRCALPHA透明渲染</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="quote">"朕本淮右布衣，因天下大乱，为众推而成大业"</p>
+        <p>—— 朱元璋</p>
+        <p style="margin-top: 20px;">社稷归墟传 · TRAE Work 创意项目</p>
+        <p>© 2026 大明王朝RPG</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{
+  "shops": {
+    "general": {
+      "name": "General Store",
+      "items": [
+        {"name": "Food", "type": "consumable", "buy_price": 5, "sell_price": 2, "desc": "Restores stamina when eaten"},
+        {"name": "HP Potion", "type": "consumable", "buy_price": 20, "sell_price": 8, "desc": "Restores 50 HP"},
+        {"name": "Stamina Potion", "type": "consumable", "buy_price": 15, "sell_price": 6, "desc": "Restores 50 stamina"},
+        {"name": "Wooden Stick", "type": "weapon", "buy_price": 30, "sell_price": 10, "desc": "Attack +2. A simple wooden stick."},
+        {"name": "Cloth Hat", "type": "helmet", "buy_price": 25, "sell_price": 8, "desc": "Defense +2. Simple cloth headwear."},
+        {"name": "Cloth Belt", "type": "belt", "buy_price": 20, "sell_price": 6, "desc": "Defense +1. A plain cloth belt."},
+        {"name": "Cloth Shoes", "type": "boots", "buy_price": 20, "sell_price": 6, "desc": "Defense +1. Worn cloth shoes."},
+        {"name": "Iron Ring", "type": "ring", "buy_price": 35, "sell_price": 12, "desc": "Attack +1. A simple iron ring."}
+      ]
+    },
+    "weapons": {
+      "name": "Weapon Shop",
+      "items": [
+        {"name": "Iron Sword", "type": "weapon", "buy_price": 80, "sell_price": 30, "desc": "Attack +5. A reliable iron sword."},
+        {"name": "Steel Sword", "type": "weapon", "buy_price": 150, "sell_price": 55, "desc": "Attack +8. Forged of fine steel."},
+        {"name": "Gentleman Sword", "type": "weapon", "buy_price": 220, "sell_price": 80, "desc": "Attack +10, Def +1. A scholar's blade."},
+        {"name": "Lady Sword", "type": "weapon", "buy_price": 200, "sell_price": 75, "desc": "Attack +9, Def +2. Light and swift."},
+        {"name": "Silver Chain", "type": "necklace", "buy_price": 90, "sell_price": 35, "desc": "Attack +1, Def +1. A silver necklace."},
+        {"name": "Silver Ring", "type": "ring", "buy_price": 70, "sell_price": 25, "desc": "Attack +2, Def +1. Polished silver."},
+        {"name": "Leather Gloves", "type": "gauntlet", "buy_price": 60, "sell_price": 22, "desc": "Attack +1, Def +2. Flexible leather gloves."}
+      ]
+    },
+    "armor": {
+      "name": "Armor Shop",
+      "items": [
+        {"name": "Leather Armor", "type": "wrist_guard", "buy_price": 70, "sell_price": 25, "desc": "Defense +2. Basic leather armor."},
+        {"name": "Iron Wrist", "type": "wrist_guard", "buy_price": 130, "sell_price": 48, "desc": "Defense +4. Sturdy iron bracers."},
+        {"name": "Iron Helmet", "type": "helmet", "buy_price": 110, "sell_price": 40, "desc": "Defense +4. A soldier's iron helm."},
+        {"name": "Steel Helmet", "type": "helmet", "buy_price": 200, "sell_price": 75, "desc": "Defense +6. Forged for officers."},
+        {"name": "Iron Shoulder", "type": "shoulder", "buy_price": 100, "sell_price": 36, "desc": "Defense +3. Protects the shoulders."},
+        {"name": "Iron Belt", "type": "belt", "buy_price": 80, "sell_price": 28, "desc": "Defense +2. An iron-studded belt."},
+        {"name": "Iron Boots", "type": "boots", "buy_price": 80, "sell_price": 28, "desc": "Defense +2. Iron-reinforced boots."}
+      ]
+    },
+    "premium": {
+      "name": "Premium Shop",
+      "items": [
+        {"name": "Zhenwu Sword", "type": "weapon", "buy_price": 400, "sell_price": 150, "desc": "Attack +12. The blade of the Dark Warrior."},
+        {"name": "Holy Fire Token", "type": "weapon", "buy_price": 350, "sell_price": 130, "desc": "Attack +15, Def +3. Sacred relic of Mingjiao."},
+        {"name": "Black Silkworm Robe", "type": "wrist_guard", "buy_price": 350, "sell_price": 130, "desc": "Defense +8. Woven of dark silk, impenetrable."},
+        {"name": "Gold Silk Armor", "type": "gauntlet", "buy_price": 300, "sell_price": 110, "desc": "Attack +2, Def +6. Soft yet strong."},
+        {"name": "Jade Ring", "type": "ring", "buy_price": 250, "sell_price": 90, "desc": "Attack +4, Def +3. A blessed jade ring."},
+        {"name": "Jade Crown", "type": "helmet", "buy_price": 380, "sell_price": 140, "desc": "Attack +1, Def +8. Crown of a true king."},
+        {"name": "Gold Torc", "type": "necklace", "buy_price": 220, "sell_price": 80, "desc": "Attack +2, Def +2. A noble gold torc."},
+        {"name": "Leopard Fetus Amulet", "type": "amulet", "buy_price": 280, "sell_price": 100, "desc": "Attack +3, Def +1. A rare mystic amulet."}
+      ]
+    },
+    "herbalist": {
+      "name": "Herbalist's Hut",
+      "items": [
+        {"name": "HP Potion", "type": "consumable", "buy_price": 18, "sell_price": 7, "desc": "Restores 50 HP. Brewed with ginseng."},
+        {"name": "Stamina Potion", "type": "consumable", "buy_price": 12, "sell_price": 5, "desc": "Restores 50 stamina. Mountain herb extract."},
+        {"name": "Food", "type": "consumable", "buy_price": 4, "sell_price": 1, "desc": "Dried mountain provisions."},
+        {"name": "Gold Ring", "type": "ring", "buy_price": 140, "sell_price": 50, "desc": "Attack +3, Def +2. A treasured gold ring."},
+        {"name": "Steel Shoulder", "type": "shoulder", "buy_price": 180, "sell_price": 65, "desc": "Defense +5. Steel-plated shoulder guards."},
+        {"name": "Steel Belt", "type": "belt", "buy_price": 140, "sell_price": 50, "desc": "Defense +3. A fine steel belt."},
+        {"name": "Steel Boots", "type": "boots", "buy_price": 140, "sell_price": 50, "desc": "Defense +3. March with confidence."}
+      ]
+    }
+  },
+  "npc_shops": {
+    "merchant_dingyuan": "general",
+    "merchant_guangzhou": "weapons",
+    "general_poyang": "armor",
+    "scholar_jinhua": "premium",
+    "herbalist_sichuan": "herbalist"
+  }
+}

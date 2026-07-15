@@ -1,0 +1,142 @@
+{
+  "monk_huangjue": {
+    "name": "Abbot Dao Yan",
+    "sprite": "npc_monk.png",
+    "x": 43, "y": 48,
+    "location": "Huangjue Temple",
+    "color": [200, 160, 50],
+    "dialogues": [
+      "Welcome to Huangjue Temple, young one.",
+      "In times of famine, even the temple cannot feed all.",
+      "I see great destiny in your eyes. Go forth and change this world.",
+      "Remember: a river may flow far, but it never forgets its source.",
+      "When you are lost, return here. The Buddha will guide you."
+    ]
+  },
+  "farmer_zhongli": {
+    "name": "Old Farmer Wang",
+    "sprite": "npc_farmer.png",
+    "x": 58, "y": 63,
+    "location": "Zhongli",
+    "color": [90, 110, 140],
+    "dialogues": [
+      "Another year of drought... the crops wither before harvest.",
+      "The tax collectors took everything again. We have nothing left.",
+      "You were once like us, Zhu Yuanzhang. Do not forget your roots.",
+      "If you lead the people, we will follow. We trust you.",
+      "The land cries out for a ruler who understands suffering."
+    ]
+  },
+  "merchant_dingyuan": {
+    "name": "Merchant Li",
+    "sprite": "npc_merchant.png",
+    "x": 51, "y": 79,
+    "location": "Dingyuan",
+    "color": [120, 60, 100],
+    "dialogues": [
+      "Ah, a traveler! I have goods from all across the land.",
+      "The roads are dangerous these days. Bandits everywhere.",
+      "I hear the Red Turban Army is gathering strength in the south.",
+      "If you need supplies, my shop is always open. Fair prices!",
+      "Between you and me, the Yuan Dynasty will not last much longer."
+    ]
+  },
+  "scholar_jinhua": {
+    "name": "Scholar Song Lian",
+    "sprite": "npc_scholar.png",
+    "x": 106, "y": 31,
+    "location": "Jinhua",
+    "color": [180, 180, 190],
+    "dialogues": [
+      "Knowledge is the foundation of any great kingdom.",
+      "I have read the classics since I was a boy. The way of kings is clear.",
+      "You seek to unite the realm? You will need wise counsel.",
+      "A ruler without scholars is like a ship without a compass.",
+      "When you build your dynasty, call upon me. I shall serve."
+    ]
+  },
+  "general_poyang": {
+    "name": "General Xu Da",
+    "sprite": "npc_general.png",
+    "x": 71, "y": 110,
+    "location": "Poyang Lake",
+    "color": [130, 30, 30],
+    "dialogues": [
+      "The Battle of Poyang Lake will decide the fate of the realm!",
+      "Chen Youliang's fleet outnumbers us, but our spirit is stronger.",
+      "I pledge my sword to you, my lord. Together we are invincible.",
+      "Fire ships! That is how we shall defeat his massive fleet!",
+      "Victory! The lake runs red, but our cause prevails!"
+    ]
+  },
+  "beggar_yingtian": {
+    "name": "Old Beggar Zhao",
+    "sprite": "npc_beggar.png",
+    "x": 104, "y": 112,
+    "location": "Yingtian",
+    "color": [110, 90, 60],
+    "dialogues": [
+      "Spare a coin, kind sir? I have not eaten in three days.",
+      "I was once a wealthy man... before the wars took everything.",
+      "You have the look of one who has known hunger. I can tell.",
+      "The streets of Yingtian are full of broken dreams.",
+      "May the heavens bless you. You are different from the others."
+    ]
+  },
+  "herbalist_sichuan": {
+    "name": "Herbalist Liu",
+    "sprite": "npc_herbalist.png",
+    "x": 16, "y": 101,
+    "location": "Sichuan",
+    "color": [60, 120, 70],
+    "dialogues": [
+      "The mountains of Sichuan hold cures for many ailments.",
+      "This ginseng root will restore your vitality. Take it freely.",
+      "I have lived in these mountains for forty years. Nature provides.",
+      "War brings wounds. I am here to heal them, one herb at a time.",
+      "Remember: the body is a temple. Treat it well, warrior."
+    ]
+  },
+  "child_hangzhou": {
+    "name": "Little Ming",
+    "sprite": "npc_child.png",
+    "x": 116, "y": 29,
+    "location": "Hangzhou",
+    "color": [200, 120, 80],
+    "dialogues": [
+      "Mister! Are you a real hero? My mama says heroes save people!",
+      "Can you teach me to use a sword? I want to be strong like you!",
+      "The bad soldiers burned our village. Will you stop them?",
+      "When I grow up, I want to be just like you, sir!",
+      "Here, take this flower! It's for good luck on your journey!"
+    ]
+  },
+  "merchant_guangzhou": {
+    "name": "Sea Merchant Chen",
+    "sprite": "npc_merchant.png",
+    "x": 96, "y": 116,
+    "location": "Guangzhou",
+    "color": [100, 80, 140],
+    "dialogues": [
+      "Welcome to Guangzhou! Port of a thousand ships!",
+      "I trade with lands beyond the sea - spices, silk, and jade.",
+      "The Yuan officials tax us merchants to death. It must end.",
+      "When you rule, will you open the ports to free trade again?",
+      "My ships are yours, my lord. The sea connects all lands."
+    ]
+  },
+  "farmer_beijing": {
+    "name": "Northern Farmer Zhang",
+    "sprite": "npc_farmer.png",
+    "x": 61, "y": 11,
+    "location": "Beijing",
+    "color": [100, 90, 120],
+    "dialogues": [
+      "The northern winds are harsh, but the soil is fertile.",
+      "We heard rumors of a great leader rising in the south. Is it you?",
+      "The Mongol soldiers oppress us daily. We pray for liberation.",
+      "If you march north, every farmer here will join your army.",
+      "The north has waited too long for a true son of Han to rule."
+    ]
+  }
+}

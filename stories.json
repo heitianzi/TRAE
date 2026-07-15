@@ -1,94 +1,94 @@
 {
   "stories": {
     "zhongli_north": {
-      "name": "钟离县-北",
-      "year": "1344年",
-      "story": "1344年，朱元璋十七岁。家乡遭遇大旱，庄稼颗粒无收，父亲和兄长相继饿死。为了活命，朱元璋被迫离开家乡，四处乞讨。此时的他，手中只有一个破碗，心中却怀揣着改变命运的决心。"
+      "name": "Zhongli - North",
+      "year": "1344 AD",
+      "story": "In 1344, Zhu Yuanzhang was seventeen years old. His hometown suffered a great drought, the crops failed completely, and his father and elder brother starved to death one after another. To survive, Zhu Yuanzhang was forced to leave his hometown and beg for food wherever he could. At this time, he had only a broken bowl in his hands, yet in his heart he carried the determination to change his destiny."
     },
     "zhongli_south": {
-      "name": "钟离县-南",
-      "year": "1344年",
-      "story": "钟离县南部是朱元璋曾经生活过的地方，这里有他童年的回忆。虽然如今家破人亡，但这片土地见证了他的成长。朱元璋站在这里，心中暗暗发誓，一定要改变自己的命运，让天下百姓不再受此苦难。"
+      "name": "Zhongli - South",
+      "year": "1344 AD",
+      "story": "The southern part of Zhongli County was where Zhu Yuanzhang once lived; it holds the memories of his childhood. Though his family was now broken and scattered, this land had witnessed his growth. Standing here, Zhu Yuanzhang silently vowed that he would change his destiny and ensure that the people of the realm would no longer suffer such hardships."
     },
     "huangjue_si": {
-      "name": "皇觉寺",
-      "year": "1344年",
-      "story": "走投无路的朱元璋来到皇觉寺出家为僧。寺庙里香火冷落，住持让他负责清扫山门。每天清晨，朱元璋都会站在山门前，望着远方，思考着人生的意义。虽然生活清苦，但他从未放弃希望。"
+      "name": "Huangjue Temple",
+      "year": "1344 AD",
+      "story": "With nowhere else to turn, Zhu Yuanzhang came to Huangjue Temple and became a monk. The temple's incense was sparse, and the abbot assigned him to sweep the mountain gate. Every dawn, Zhu Yuanzhang would stand before the gate, gazing into the distance, pondering the meaning of life. Though his life was austere, he never gave up hope."
     },
     "huaixi": {
-      "name": "淮西",
-      "year": "1351年",
-      "story": "红巾军起义爆发，天下大乱。朱元璋离开皇觉寺，投奔了郭子兴的红巾军。凭借着过人的胆识和谋略，他很快在军中崭露头角，被郭子兴收为义子，并娶了马氏为妻。"
+      "name": "Huaixi",
+      "year": "1351 AD",
+      "story": "The Red Turban Rebellion erupted, and the realm fell into chaos. Zhu Yuanzhang left Huangjue Temple and joined Guo Zixing's Red Turban Army. With his exceptional courage and strategy, he quickly distinguished himself in the army, was adopted as a foster son by Guo Zixing, and married Lady Ma."
     },
     "henan": {
-      "name": "河南",
-      "year": "1352年",
-      "story": "朱元璋率领部队南征北战，在河南一带屡建奇功。他的军队纪律严明，深受百姓爱戴。此时的朱元璋，已经不再是当年那个乞讨的少年，而是一位威震四方的将领。"
+      "name": "Henan",
+      "year": "1352 AD",
+      "story": "Zhu Yuanzhang led his troops on campaigns far and wide, achieving remarkable feats in the Henan region. His army was strictly disciplined and deeply loved by the people. By this time, Zhu Yuanzhang was no longer the begging youth of years past, but a commander whose renown struck awe in all directions."
     },
     "dingyuan_lvpai_zhai": {
-      "name": "定远驴牌寨",
-      "year": "1353年",
-      "story": "朱元璋收编了定远驴牌寨的武装力量，实力大增。他开始招募贤才，刘基、宋濂等名士纷纷投奔。朱元璋虚心听取他们的建议，制定了一系列治国安邦的策略。"
+      "name": "Dingyuan Lvpaizhai",
+      "year": "1353 AD",
+      "story": "Zhu Yuanzhang incorporated the armed forces of Dingyuan Lvpaizhai, greatly increasing his strength. He began to recruit worthy talents, and eminent scholars such as Liu Ji and Song Lian came to join him one after another. Zhu Yuanzhang humbly listened to their counsel and devised a series of strategies for governing the realm and securing the nation."
     },
     "dingyuan_miao_shan": {
-      "name": "定远妙山",
-      "year": "1353年",
-      "story": "在定远妙山，朱元璋整顿军纪，训练士兵。他深知，要想成就大业，必须有一支精锐的军队。他亲自操练，以身作则，士兵们对他敬佩不已。"
+      "name": "Dingyuan Miaoshan",
+      "year": "1353 AD",
+      "story": "At Dingyuan Miaoshan, Zhu Yuanzhang tightened military discipline and trained his soldiers. He knew well that to accomplish great deeds, he must have an elite army. He personally drilled the troops, leading by example, and the soldiers admired him deeply."
     },
     "hezhou": {
-      "name": "和州",
-      "year": "1355年",
-      "story": "朱元璋攻占和州，建立了自己的根据地。他实行仁政，减轻赋税，安抚百姓。和州百姓安居乐业，朱元璋的名声也越来越响亮。"
+      "name": "Hezhou",
+      "year": "1355 AD",
+      "story": "Zhu Yuanzhang captured Hezhou and established his own base. He practiced benevolent governance, lightened taxes, and pacified the people. The people of Hezhou lived and worked in peace, and Zhu Yuanzhang's reputation grew ever more resounding."
     },
     "taiping_fu": {
-      "name": "太平府",
-      "year": "1356年",
-      "story": "朱元璋攻占太平府，势力进一步扩大。他开始建立自己的政权，设立官署，制定法律。此时的朱元璋，已经具备了争夺天下的实力。"
+      "name": "Taiping",
+      "year": "1356 AD",
+      "story": "Zhu Yuanzhang captured Taiping Prefecture, further expanding his power. He began to establish his own administration, set up government offices, and enacted laws. By this time, Zhu Yuanzhang already possessed the strength to contend for the realm."
     },
     "yingtian_fu": {
-      "name": "应天府",
-      "year": "1356年",
-      "story": "朱元璋攻占应天府（今南京），将其作为自己的都城。他广招贤才，发展经济，积蓄力量。应天府成为了朱元璋争夺天下的重要基地。"
+      "name": "Yingtian",
+      "year": "1356 AD",
+      "story": "Zhu Yuanzhang captured Yingtian Prefecture (present-day Nanjing) and made it his capital. He widely recruited worthy talents, developed the economy, and accumulated strength. Yingtian Prefecture became an important base for Zhu Yuanzhang to contend for the realm."
     },
     "huizhou": {
-      "name": "徽州",
-      "year": "1357年",
-      "story": "朱元璋进军徽州，击败了当地的割据势力。他实行屯田制，发展农业生产，解决了军队的粮草问题。徽州的百姓纷纷支持朱元璋，他的势力范围不断扩大。"
+      "name": "Huizhou",
+      "year": "1357 AD",
+      "story": "Zhu Yuanzhang advanced into Huizhou and defeated the local separatist forces. He implemented the military farming system, developed agricultural production, and solved the army's provisions problem. The people of Huizhou rallied behind Zhu Yuanzhang one after another, and his sphere of influence expanded continuously."
     },
     "zhedong": {
-      "name": "浙东",
-      "year": "1358年",
-      "story": "朱元璋进军浙东，击败了方国珍等割据势力。他控制了浙江沿海地区，获得了重要的海上通道。此时的朱元璋，已经成为了南方最强大的势力之一。"
+      "name": "Zhedong",
+      "year": "1358 AD",
+      "story": "Zhu Yuanzhang advanced into Zhedong and defeated separatist forces such as Fang Guozhen. He gained control of the coastal region of Zhejiang and acquired vital maritime routes. By this time, Zhu Yuanzhang had become one of the most powerful forces in the south."
     },
     "jinhua": {
-      "name": "金华",
-      "year": "1358年",
-      "story": "朱元璋攻占金华，进一步巩固了在浙江的统治。他在金华设立了官署，推行新政。金华的百姓安居乐业，朱元璋的声望达到了新的高度。"
+      "name": "Jinhua",
+      "year": "1358 AD",
+      "story": "Zhu Yuanzhang captured Jinhua, further consolidating his rule in Zhejiang. He established government offices in Jinhua and implemented new policies. The people of Jinhua lived and worked in peace, and Zhu Yuanzhang's prestige reached new heights."
     },
     "poyang_hu": {
-      "name": "鄱阳湖",
-      "year": "1363年",
-      "story": "鄱阳湖之战爆发，朱元璋与陈友谅展开决战。经过三十六天的激战，朱元璋以少胜多，击败了陈友谅。这场战役奠定了朱元璋统一江南的基础。"
+      "name": "Poyang Lake",
+      "year": "1363 AD",
+      "story": "The Battle of Poyang Lake erupted, and Zhu Yuanzhang faced off against Chen Youliang in a decisive clash. After thirty-six days of fierce combat, Zhu Yuanzhang triumphed over Chen Youliang despite being outnumbered. This battle laid the foundation for Zhu Yuanzhang to unify the Jiangnan region."
     },
     "suzhou": {
-      "name": "苏州",
-      "year": "1365年",
-      "story": "朱元璋攻占苏州，消灭了张士诚的势力。他安抚苏州百姓，恢复经济。苏州的繁荣景象逐渐恢复，朱元璋的统治更加稳固。"
+      "name": "Suzhou",
+      "year": "1365 AD",
+      "story": "Zhu Yuanzhang captured Suzhou and eliminated the forces of Zhang Shicheng. He pacified the people of Suzhou and restored the economy. The prosperity of Suzhou gradually returned, and Zhu Yuanzhang's rule grew ever more secure."
     },
     "yuan_dadu": {
-      "name": "元大都",
-      "year": "1368年",
-      "story": "1368年，朱元璋在应天府称帝，建立大明王朝，年号洪武。他派徐达、常遇春率领大军北伐，攻占元大都，推翻了元朝的统治。元顺帝仓皇北逃，元朝灭亡。"
+      "name": "Yuan Dadu",
+      "year": "1368 AD",
+      "story": "In 1368, Zhu Yuanzhang proclaimed himself emperor in Yingtian Prefecture, established the Great Ming Dynasty, and adopted the reign title Hongwu. He dispatched Xu Da and Chang Yuchun to lead a great army on the northern campaign, capturing Yuan Dadu and overthrowing the Yuan Dynasty's rule. Emperor Shun of Yuan fled north in panic, and the Yuan Dynasty perished."
     },
     "sichuan": {
-      "name": "四川",
-      "year": "1371年",
-      "story": "朱元璋派大军攻打四川，消灭了明玉珍的割据势力。四川归入大明版图，朱元璋完成了对西南地区的统一。此时的朱元璋，已经控制了整个中国南方。"
+      "name": "Sichuan",
+      "year": "1371 AD",
+      "story": "Zhu Yuanzhang dispatched a great army to attack Sichuan and eliminated the separatist forces of Ming Yuzhen. Sichuan was incorporated into the territory of the Great Ming, and Zhu Yuanzhang completed the unification of the southwest. By this time, Zhu Yuanzhang had already brought all of southern China under his control."
     },
     "yunnan": {
-      "name": "云南",
-      "year": "1382年",
-      "story": "朱元璋派沐英率军攻打云南，消灭了梁王的势力。云南归入大明版图，朱元璋完成了对全国的统一。从乞讨少年到大明皇帝，朱元璋用三十八年的时间，书写了一段传奇。"
+      "name": "Yunnan",
+      "year": "1382 AD",
+      "story": "Zhu Yuanzhang dispatched Mu Ying to lead the army in attacking Yunnan and eliminated the forces of Prince Liang. Yunnan was incorporated into the territory of the Great Ming, and Zhu Yuanzhang completed the unification of the entire nation. From a begging youth to Emperor of the Great Ming, Zhu Yuanzhang spent thirty-eight years writing a legendary tale."
     }
   }
 }
