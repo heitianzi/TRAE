@@ -2473,96 +2473,97 @@ class Game:
         # Draw detailed character stats interface
         player = self.player
         gui_width = 220
-        gui_height = 240
+        gui_height = 280
         gui_x = 20
         gui_y = 20
-        
+
         # Draw semi-transparent rounded rectangle background
         pygame.draw.rect(surface, (50, 50, 50, 180), (gui_x, gui_y, gui_width, gui_height), border_radius=10)
-        
-        # Draw character info
+
+        # Render character info text
         stage_names = {'peasant': 'Peasant', 'soldier': 'Soldier', 'robe': 'Emperor'}
         stage_name = stage_names.get(player.skin_stage, 'Peasant')
-        name_text = self.font.render(f"{player.name} [{stage_name}]", True, (255, 215, 0))
+        name_text = self.small_font.render(f"{player.name} [{stage_name}]", True, (255, 215, 0))
         level_text = self.font.render(f"Level: {player.level}", True, WHITE)
         exp_text = self.font.render(f"EXP: {int(player.exp)}/{player.exp_to_next_level}", True, WHITE)
-
         attack_text = self.font.render(f"ATK: {player.attack}", True, WHITE)
         defense_text = self.font.render(f"DEF: {player.defense}", True, WHITE)
-        
-        # Draw HP bar
-        hp_ratio = min(player.hp / player.max_hp, 1.0)
-        hp_bar_width = gui_width - 40
+        hp_text = self.font.render(f"HP: {int(player.hp)}/{player.max_hp}", True, WHITE)
+        stamina_text = self.font.render(f"Stamina: {int(player.stamina)}/{player.max_stamina}", True, WHITE)
+        food_text = self.font.render(f"Food: {player.food}/{player.max_food}", True, WHITE)
+        gold_text = self.font.render(f"Gold: {player.gold}", True, (255, 200, 50))
+
+        # ---- Vertical layout (consistent line spacing, no overlaps) ----
+        line_x = gui_x + 20
+        bar_width = gui_width - 40
+
+        # Row 1: Name (y=15)
+        y_name = gui_y + 15
+        # Row 2: Level (y=43)
+        y_level = gui_y + 43
+        # Row 3: EXP text (y=71)
+        y_exp_text = gui_y + 71
+        # EXP bar (y=97, height=10)
+        exp_bar_y = gui_y + 97
+        exp_bar_height = 10
+        # Row 4: HP text (y=118)
+        y_hp_text = gui_y + 118
+        # HP bar (y=142, height=12)
+        hp_bar_y = gui_y + 142
         hp_bar_height = 12
-        hp_bar_x = gui_x + 20
-        hp_bar_y = gui_y + 95
-        
-        # HP bar background
-        pygame.draw.rect(surface, (80, 80, 80), (hp_bar_x, hp_bar_y, hp_bar_width, hp_bar_height), border_radius=3)
-        # HP bar
+        # Row 5: Stamina text (y=165)
+        y_stamina_text = gui_y + 165
+        # Stamina bar (y=189, height=12)
+        stamina_bar_y = gui_y + 189
+        stamina_bar_height = 12
+        # Row 6: Food + Gold on one line (y=215)
+        y_food_gold = gui_y + 215
+        # Row 7: ATK / DEF on one line (y=243)
+        y_atkdef = gui_y + 243
+
+        # ---- EXP bar ----
+        exp_ratio = min(player.exp / player.exp_to_next_level, 1.0)
+        pygame.draw.rect(surface, (80, 80, 80), (line_x, exp_bar_y, bar_width, exp_bar_height), border_radius=3)
+        pygame.draw.rect(surface, (0, 191, 255), (line_x, exp_bar_y, bar_width * exp_ratio, exp_bar_height), border_radius=3)
+
+        # ---- HP bar ----
+        hp_ratio = min(player.hp / player.max_hp, 1.0)
         if hp_ratio > 0.5:
             hp_color = (0, 255, 0)
         elif hp_ratio > 0.25:
             hp_color = (255, 255, 0)
         else:
             hp_color = (255, 0, 0)
-        pygame.draw.rect(surface, hp_color, (hp_bar_x, hp_bar_y, hp_bar_width * hp_ratio, hp_bar_height), border_radius=3)
-        
-        # Draw HP text
-        hp_text = self.font.render(f"HP: {int(player.hp)}/{player.max_hp}", True, WHITE)
-        surface.blit(hp_text, (hp_bar_x, hp_bar_y - 18))
-        
-        # Draw stamina bar
-        stamina_ratio = min(player.stamina / player.max_stamina, 1.0)
-        stamina_bar_width = gui_width - 40
-        stamina_bar_height = 12
-        stamina_bar_x = gui_x + 20
-        stamina_bar_y = hp_bar_y + 30
-        
-        # Stamina bar background
-        pygame.draw.rect(surface, (80, 80, 80), (stamina_bar_x, stamina_bar_y, stamina_bar_width, stamina_bar_height), border_radius=3)
-        # Stamina bar
-        if stamina_ratio > 0.5:
-            stamina_color = (0, 128, 255)  # Blue
-        elif stamina_ratio > 0.25:
-            stamina_color = (0, 255, 255)  # Cyan
-        else:
-            stamina_color = (255, 165, 0)  # Orange
-        pygame.draw.rect(surface, stamina_color, (stamina_bar_x, stamina_bar_y, stamina_bar_width * stamina_ratio, stamina_bar_height), border_radius=3)
-        
-        # Draw stamina text
-        stamina_text = self.font.render(f"Stamina: {int(player.stamina)}/{player.max_stamina}", True, WHITE)
-        surface.blit(stamina_text, (stamina_bar_x, stamina_bar_y - 18))
-        
-        # Draw food count
-        food_text = self.font.render(f"Food: {player.food}/{player.max_food}", True, WHITE)
-        surface.blit(food_text, (gui_x + 20, stamina_bar_y + 30))
+        pygame.draw.rect(surface, (80, 80, 80), (line_x, hp_bar_y, bar_width, hp_bar_height), border_radius=3)
+        pygame.draw.rect(surface, hp_color, (line_x, hp_bar_y, bar_width * hp_ratio, hp_bar_height), border_radius=3)
 
-        # Draw gold count
-        gold_text = self.font.render(f"Gold: {player.gold}", True, (255, 200, 50))
-        surface.blit(gold_text, (gui_x + 20, stamina_bar_y + 50))
-        
-        # Draw current status (Eating/Drinking)
+        # ---- Stamina bar ----
+        stamina_ratio = min(player.stamina / player.max_stamina, 1.0)
+        if stamina_ratio > 0.5:
+            stamina_color = (0, 128, 255)
+        elif stamina_ratio > 0.25:
+            stamina_color = (0, 255, 255)
+        else:
+            stamina_color = (255, 165, 0)
+        pygame.draw.rect(surface, (80, 80, 80), (line_x, stamina_bar_y, bar_width, stamina_bar_height), border_radius=3)
+        pygame.draw.rect(surface, stamina_color, (line_x, stamina_bar_y, bar_width * stamina_ratio, stamina_bar_height), border_radius=3)
+
+        # ---- Blit all text rows ----
+        surface.blit(name_text, (line_x, y_name))
+        surface.blit(level_text, (line_x, y_level))
+        surface.blit(exp_text, (line_x, y_exp_text))
+        surface.blit(hp_text, (line_x, y_hp_text))
+        surface.blit(stamina_text, (line_x, y_stamina_text))
+        surface.blit(food_text, (line_x, y_food_gold))
+        surface.blit(gold_text, (line_x + 100, y_food_gold))
+        # ATK on left, DEF on right of the same row
+        surface.blit(attack_text, (line_x, y_atkdef))
+        surface.blit(defense_text, (line_x + 100, y_atkdef))
+
+        # Draw current status (Eating/Drinking) below the panel
         if self.current_status:
             status_text = self.font.render(self.current_status, True, (0, 255, 0))
-            surface.blit(status_text, (gui_x + 20, stamina_bar_y + 55))
-        
-        # Draw EXP bar
-        exp_ratio = min(player.exp / player.exp_to_next_level, 1.0)
-        exp_bar_width = gui_width - 40
-        exp_bar_height = 10
-        exp_bar_x = gui_x + 20
-        exp_bar_y = gui_y + 125
-        
-        pygame.draw.rect(surface, (80, 80, 80), (exp_bar_x, exp_bar_y, exp_bar_width, exp_bar_height), border_radius=3)
-        pygame.draw.rect(surface, (0, 191, 255), (exp_bar_x, exp_bar_y, exp_bar_width * exp_ratio, exp_bar_height), border_radius=3)
-        
-        # Draw text
-        surface.blit(name_text, (gui_x + 20, gui_y + 20))
-        surface.blit(level_text, (gui_x + 20, gui_y + 45))
-        surface.blit(exp_text, (gui_x + 20, gui_y + 65))
-        surface.blit(attack_text, (gui_x + 20, gui_y + 145))
-        surface.blit(defense_text, (gui_x + 20, gui_y + 170))
+            surface.blit(status_text, (line_x, y_atkdef + 25))
         
         # Draw equipment panel
         if self.equipment_panel_visible:
